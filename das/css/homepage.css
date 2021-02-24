@@ -1,0 +1,49 @@
+body {
+    background: linear-gradient(-20deg, #8ec304, #77b85b, #336200, #18a001);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%, 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.company {
+    display: inline;
+}
+
+.container {
+    box-shadow: 2px 2px 5px 2px;
+}
+
+.err {
+    color: red;
+    display: none;
+}
+
+footer {
+    background-color: #18a001;
+    font-size: 16px !important;
+    font-family: cambria sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+hr {
+    border-top: 8px solid #18a001;
+    border-radius: 5px;
+}
+
+.theme-color {
+    background-color: #589F51;
+}

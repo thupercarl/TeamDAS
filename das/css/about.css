@@ -1,0 +1,17 @@
+h1{
+ text-align: center;
+}
+
+p {
+    font-size: 16px;
+}
+
+.owner{
+    text-align: center;
+    font-size: 24px;
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

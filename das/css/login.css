@@ -1,0 +1,64 @@
+.loginButton {
+    background-color: #18a001;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+.login{
+    border: 3px solid white;
+}
+
+h2{
+    float: inside;
+    text-align: center;
+}
+
+.loginText{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+
+}
+
+p {
+    font-size: 16px;
+}
+
+span.psw {
+    display: block;
+    float: none;
+}
+
+.accept{
+    background-color: white;
+    color: #18a001;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border-color: #18a001;
+    cursor: pointer;
+    width: 20%;
+}
+
+.reject{
+    background-color: white;
+    color: red;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border-color: red;
+    cursor: pointer;
+    width: 20%;
+}

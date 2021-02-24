@@ -1,0 +1,139 @@
+body {
+    background: linear-gradient(-20deg, #8ec304, #77b85b, #336200, #18a001);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+footer {
+    background-color: #18a001;
+    font-size: 16px !important;
+    font-family: cambria sans-serif;
+}
+
+hr {
+    border-top: 8px solid #18a001;
+    border-radius: 5px;
+}
+
+svg:hover {
+    background-color: #18a001;
+    border-radius: 20px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%, 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.company {
+    display: inline;
+}
+
+.container {
+    box-shadow: 4px 4px 10px 3px;
+
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.err {
+    color: red;
+    display: none;
+}
+
+
+/* The hero image */
+.hero-img {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../images/jasper-national-park-5819878_1920.jpg");
+
+    /* Set a specific height */
+    height: 50%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.theme-color {
+    background-color: #18a001;
+}
+
+.welcome {
+    font-size: 21px;
+}
+
+.clogoConfirm {
+    width: 150px;
+}
+
+#clogoConfirm img {
+    width: 100%;
+    height: auto;
+}
+
+#coneybeareTagline {
+    color: white;
+}
+
+#country {
+    max-width: 100%; !important;
+}
+
+#returnSymbol {
+    max-width: 10%;
+}
+
+#tags{
+    float:left;
+    border:1px solid #ccc;
+    border-radius: 10px;
+    padding:5px;
+    font-family:Arial;
+}
+#tags > span{
+    cursor:pointer;
+    display:block;
+    float:left;
+    color:#fff;
+    background: #1c8100;
+    padding:5px;
+    /*padding-right:25px;*/
+    margin:4px;
+    border-radius: 25px;
+}
+#tags > span:hover{
+    opacity:0.7;
+}
+/*#tags > span:after{*/
+/*    position:absolute;*/
+/*    content:"×";*/
+/*    border:1px solid;*/
+/*    padding:2px 5px;*/
+/*    margin-left:3px;*/
+/*    font-size:11px;*/
+/*}*/
+#tags > input{
+    background:#eee;
+    border:0;
+    margin:4px;
+    padding:7px;
+    width:auto;
+}
