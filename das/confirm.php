@@ -47,6 +47,7 @@ error_reporting(E_ALL);
         <div class="border p-2 bg-white p-5">
 
             <?php
+            $cnxn = connect();
             //company information var
             $cname = $_POST['cname'];
             $cabout = $_POST['cabout'];
@@ -59,11 +60,17 @@ error_reporting(E_ALL);
             $keywords = $_POST['keywords'];
 
             //Contact person var
-            $cfname = $_POST['cfname'];
-            $clname = $_POST['clname'];
+            $cpfname = $_POST['cpfname'];
+            $cplname = $_POST['cplname'];
+            $cpphone = $_POST['cpphone'];
             $cpemail = $_POST['cpemail'];
 
             //location var
+            $addressl1 = $_POST['addressl1'];
+            $addressl2 = $_POST['addressl2'];
+            $steapt = $_POST['ste&apt'];
+            $czip = $_POST['czip'];
+
             $city = $_POST['city'];
             $state = $_POST['state'];
             $country = $_POST['country'];
@@ -99,7 +106,7 @@ error_reporting(E_ALL);
             }
 
             // Check file size
-            if ($_FILES["clogo"]["size"] > 500000) {
+            if (($_FILES["clogo"]["size"])/1024/1024 > 5) {
                 //echo "Sorry, your file is too large.";
                 $uploadOk = 0;
             }
@@ -117,9 +124,9 @@ error_reporting(E_ALL);
             // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["clogo"]["tmp_name"], $target_file)) {
-                   // echo "The file ". htmlspecialchars( basename( $_FILES["clogo"]["name"])). " has been uploaded.";
+                    //echo "The file ". htmlspecialchars( basename( $_FILES["clogo"]["name"])). " has been uploaded.";
                 } else {
-                    //echo "Sorry, there was an error uploading your file.";
+                    echo "Sorry, there was an error uploading your file.";
                 }
             }
 
@@ -149,10 +156,13 @@ error_reporting(E_ALL);
                 }
             }
 
-            echo "<b>Company Email: </b> $cemail <br>";
-            $emailBody .= "<b>Company Email: </b> $cemail <br>";
+            //show company email if not empty
+            if (!empty($cemail)){
+                echo "<b>Company Email: </b> $cemail <br>";
+                $emailBody .= "<b>Company Email: </b> $cemail <br>";
+            }
 
-            //show phone of not empty
+            //show company phone if not empty
             if (!empty($cphone)) {
                 echo "<b>Company Phone: </b> $cphone <br>";
                 $emailBody .= "<b>Company Phone: </b> $cphone <br>";
@@ -165,55 +175,66 @@ error_reporting(E_ALL);
             //Image Provided
             //used inline styling here. Couldn't get to work with external sheet
             echo "<b>Image Provided: </b> <br> <img src='" . $filename . "' alt='Provided Image' style='max-width: 150px'> <br>";
-            $emailBody .= "<b>Image Provided: </b> <br> <img src='" . $filename . "' alt='Provided Image' style='max-width: 150px'> <br>";
+            $emailBody .= "<b>Image Provided: </b> <br> <img src='https://das.greenriverdev.com/" . $filename . "' alt='Provided Image' style='max-width: 150px'> <br>";
 
             //Keywords
             echo "<b>Keywords: </b> $keywords <br> <br>";
             $emailBody .= "<b>Keywords: </b> $keywords <br> <br>";
 
-            //contact info
-            if ((!empty($cfname) || !empty($clname))) {
-                echo "<b>Contact Name: </b> $cfname $clname <br>";
-                $emailBody .= "<b>Contact Name: </b> $cfname $clname <br>";
+            //point of contact info
 
-            }
-            if (!empty($cpemail)) {
-                echo "<b>Contact Email: </b> $cpemail <br> <br>";
-                $emailBody .="<b>Contact Email: </b> $cpemail <br> <br>";
+            //Contact name
+            if (!empty($cpfname) && !empty($cplname)) {
+                echo "<b>Contact Name: </b> $cpfname $cplname <br>";
+                $emailBody .= "<b>Contact Name: </b> $cpfname $cplname <br>";
             }
 
+            //contact phone number
+            echo "<b>Contact Phone: </b> $cpphone <br> <br>";
+            $emailBody .="<b>Contact Phone: </b> $cpphone <br> <br>";
+
+            //contact email
+            echo "<b>Contact Email: </b> $cpemail <br> <br>";
+            $emailBody .="<b>Contact Email: </b> $cpemail <br> <br>";
 
             //location info echo
-            //if both state and city was filled in
-            if (!empty($city) && !empty($state)) {
-                echo "<b>Location: </b> <br>$city, $state <br>";
-                $emailBody .= "<b>Location: </b> <br>$city, $state <br>";
+            echo "<b>Location: </b><br>";
 
-                echo "$country <br>";
-                $emailBody .="$country <br>";
+            //Address line 1
+            if (!empty($addressl1)) {
+                echo "$addressl1";
+                $emailBody .= "$addressl1";
             }
 
-            //If only city was filled in
-            elseif (!empty($city)) {
-                echo "<b>Location: </b> <br>$state <br>";
-                $emailBody .= "<b>Location: </b> <br>$state <br>";
+            //Address line 2
+            if (!empty($addressl2)) {
+                echo "<br>$addressl2";
+                $emailBody .= "<br>$addressl2";
+            }
 
-                echo "$country <br>";
-                $emailBody .= "$country <br>";
+            //suite or apt or unit
+            if (!empty($steapt)) {
+                echo " $steapt";
+                $emailBody .= " $steapt";
             }
-            //if only state was filled in
-            elseif (!empty($state)) {
-                echo "<b>Location: </b> $state <br>";
-                $emailBody .= "<b>Location: </b> $state <br>";
-                echo "$country <br>";
-                $emailBody .= "$country <br>";
+
+            //city and state
+            echo "<br>$city $state";
+            $emailBody .= "<br>$city $state";
+
+            //zip code
+            if (!empty($czip)) {
+                echo " $czip";
+                $emailBody .= " $czip";
             }
-            else {
-                //if state and country was not filled in
-                echo "<b>Location: </b> $country <br>";
-                $emailBody .= "<b>Location: </b> $country <br>";
-            }
+
+            //country abbreviation
+            echo "<br>$country";
+            $emailBody .= "<br>$country";
+
+
             echo "<br>";
+            $emailBody .= "<br>";
 
             //Service area
             echo "<b>Service Area: </b> $carea <br> <br>";
@@ -229,8 +250,21 @@ error_reporting(E_ALL);
             $headers = "Content-type: text/html; charset=UTF-8\r\n";
             $headers .= "From: $emailFrom\r\n";
             $emailBody .= "<br> Login here to review request: <br> https://das.greenriverdev.com/login.php";
-           // $success = mail($emailTo, $emailSubject, $emailBody, $headers);
+            //$success = mail($emailTo, $emailSubject, $emailBody, $headers);
 
+            //concatenate for database entry
+            $address = $addressl1 . " " . $addressl2 . " " . $steapt;
+            $clogo = "https://das.greenriverdev.com/".$target_file;
+
+            //send to database
+            $sql = "INSERT INTO companies (name, category, logo, about, tagline, url, 
+                       tag_cloud, company_phone, company_email, contact_fname, contact_lname, contact_phone, 
+                       contact_email, address, city, state, country) 
+                    VALUES ('$cname', '$ccategory', '$clogo', 
+                            '$cabout', '$ctagline', '$curl', '$keywords', '$cphone', '$cemail', '$cpfname',
+                            '$cplname', '$cpphone', '$cpemail', '$address', '$city', '$state', '$country');";
+
+            $success = mysqli_query($cnxn, $sql);
             ?>
 
         </div>

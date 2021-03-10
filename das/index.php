@@ -89,21 +89,21 @@ include('includes/head.php');
         <div class="col-sm">
             <h5 class="text-center text-white bg-success">Circular-Economy</h5>
             <div class="text-center">
-                <a href="/categories.php?search=agriculture"><svg><use href="icons/symbol-defs.svg#circular-economy"></use></svg></a>
+                <a href="/categories.php?search=economy"><svg><use href="icons/symbol-defs.svg#circular-economy"></use></svg></a>
             </div>
         </div>
 
         <div class="col-sm">
             <h5 class="text-center text-white bg-success">Healthcare</h5>
             <div class="text-center">
-                <a href="/categories.php?search=agriculture"><svg class="pl-3"><use href="icons/symbol-defs.svg#healthcare"></use></svg></a>
+                <a href="/categories.php?search=healthcare"><svg class="pl-3"><use href="icons/symbol-defs.svg#healthcare"></use></svg></a>
             </div>
         </div>
 
         <div class="col-sm">
             <h5 class="text-center text-white bg-success">Lighting</h5>
             <div class="text-center">
-                <a href="/categories.php?search=agriculture"><svg><use href="icons/symbol-defs.svg#lighting"></use></svg></a>
+                <a href="/categories.php?search=lighting"><svg><use href="icons/symbol-defs.svg#lighting"></use></svg></a>
             </div>
         </div>
     </div>

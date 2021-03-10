@@ -1,21 +1,21 @@
 <?php
-include('includes/head.php');
-?>
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//
+//session_start();
+//if (!isset($_SESSION['loggedin'])) {
+//
+//    //Store the page that I'm currently on in the session
+//    $_SESSION['page'] = $_SERVER['SCRIPT_URI'];
+//
+//    //Redirect to login
+//    header("location: login.php");
+//}
+//
+//?>
 
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-session_start();
-if (!isset($_SESSION['loggedin'])) {
-
-    //Store the page that I'm currently on in the session
-    $_SESSION['page'] = $_SERVER['SCRIPT_URI'];
-
-    //Redirect to login
-    header("location: login.php");
-}
-
+include('includes/head.php');
 ?>
 
 <link rel="stylesheet" href="css/login.css">
