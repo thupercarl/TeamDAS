@@ -12,19 +12,20 @@
                     <a class="nav-link text-white" href="/about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/categories.php">Categories</a>
+                    <a class="nav-link text-white" href="/categories.php">Catalog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/webform.php">Sign up</a>
                 </li>
             </ul>
 
-            <div class="input-group">
+            <div class="input-group d-block">
                 <form method="get" action="../categories.php">
-                    <input type="text" name="search" placeholder="Enter search terms...">
-                    <input type="submit" value="Search">
+                    <input type="text" name="search" placeholder="Enter search terms..." style="width: 80%; height: 35px;">
+                    <input class="btn btn-success d-inline" type="submit" value="Search" style="height: 100%;">
                 </form>
             </div>
+
             <!--
                 Pass search query to category page
                 Store passed search as variable
