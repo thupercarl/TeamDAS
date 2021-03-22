@@ -1,0 +1,225 @@
+html {
+    overflow-x: hidden;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+/*    background: linear-gradient(-20deg, #8ec304, #77b85b, #336200, #18a001);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;*/
+    height: 100%;
+}
+
+footer {
+    background-color: rgba(24, 160, 1, .9);
+    font-size: 16px !important;
+    font-family: cambria sans-serif;
+}
+
+hr {
+    border-top: 8px solid #18a001;
+    border-radius: 5px;
+}
+
+svg:hover {
+    background-color: #18a001;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%, 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    visibility: hidden;
+}
+
+.company {
+    display: inline;
+}
+
+.container {
+    /*box-shadow: 4px 4px 10px 3px;*/
+
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.err {
+    color: red;
+    display: none;
+}
+
+
+/* The hero image */
+.hero-img {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../images/jasper-national-park-5819878_1920.jpg");
+
+    /* Set a specific height */
+    height: 35%;
+    max-width: 100%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* The hero image for home page */
+.hero-img-home {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../images/jasper-national-park-5819878_1920.jpg");
+
+    /* Set a specific height */
+    min-height: 100%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    overflow-y: hidden;
+
+}
+
+.card-hover {
+    background-color: rgba(105,105,105,0.25);
+    -webkit-transition: background-color 1s;
+}
+
+.card-hover:hover {
+    background-color: #18a001;
+    border-radius: 20px;
+    transition: 0.75s;
+    /*-webkit-transition: border-radius 1.0s;*/
+
+}
+
+
+.img-background-banff {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("../images/river-banff.jpg");
+
+    /* Set a specific height */
+    height: 100%;
+    min-height: 100%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    overflow-y: hidden;
+}
+
+.responsive-font {
+    font-size: 3rem;
+    /*max-font-size: 5em;*/
+}
+.responsive-font-sub-1 {
+    font-size: 2rem;
+    /*max-font-size: 5em;*/
+}
+.responsive-font-sub-2 {
+    font-size: .75rem;
+    /*max-font-size: 5em;*/
+}
+
+.hidden {
+    display: none;
+}
+
+.max-width-100 {
+    max-width: 100%; !important;
+}
+
+.theme-color {
+    background-color: #18a001;
+}
+
+.join-catalog-home {
+    min-height: 100%;
+}
+
+.welcome {
+    font-size: 1.5rem;
+}
+
+.clogoConfirm {
+    width: 150px;
+}
+
+#clogoConfirm img {
+    width: 100%;
+    height: auto;
+}
+
+#coneybeareTagline {
+    color: white;
+}
+
+#main {
+    max-width: 100%;
+}
+#returnSymbol {
+    max-width: 10%;
+}
+
+#tags{
+    float:left;
+    border:1px solid #ccc;
+    border-radius: 10px;
+    padding:5px;
+    font-family:Arial;
+}
+#tags > span{
+    cursor:pointer;
+    display:block;
+    float:left;
+    color:#fff;
+    /*background: #1c8100;*/
+    background: #1c8100;
+    padding:5px;
+    /*padding-right:25px;*/
+    margin:4px;
+    border-radius: 20px;
+}
+#tags > span:hover{
+    opacity:0.7;
+}
+/*#tags > span:after{*/
+/*    position:absolute;*/
+/*    content:"×";*/
+/*    border:1px solid;*/
+/*    padding:2px 5px;*/
+/*    margin-left:3px;*/
+/*    font-size:11px;*/
+/*}*/
+#tags > input{
+    background:#eee;
+    border:0;
+    margin:4px;
+    padding:7px;
+    width:auto;
+}
